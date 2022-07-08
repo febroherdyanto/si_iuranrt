@@ -35,11 +35,6 @@
                                         <label class="float-label">Nama Lengkap</label>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="text" name="kelamin" class="form-control" required="">
-                                        <span class="form-bar"></span>
-                                        <label class="float-label">Jenis Kelamin</label>
-                                    </div>
-                                    <div class="form-group form-primary">
                                         <select name="kelamin" class="form-control">
                                             <option>Pilih Jenis Kelamin</option>
                                             <option value="L">Laki-Laki</option>

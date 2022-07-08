@@ -247,3 +247,81 @@ in APPPATH\Views\addwarga.php on line 37.
  8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:00:19 --> Undefined property: App\Controllers\Warga::$session
+in APPPATH\Controllers\Warga.php on line 52.
+ 1 APPPATH\Controllers\Warga.php(52): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->save()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-08 10:01:14 --> Duplicate entry '1234' for key 'warga.nik'
+CRITICAL - 2022-07-08 10:01:14 --> Duplicate entry '1234' for key 'warga.nik'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH\Models\WargaModel.php(22): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\Warga.php(50): App\Models\WargaModel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->save()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:01:36 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 14.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:01:42 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 14.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:01:57 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 14.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:06:11 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 15.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:26:06 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 15.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:28:11 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 11.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-08 10:29:34 --> Too few arguments to function App\Models\WargaModel::__construct(), 0 passed in C:\Program Files\Ampps\www\si_iuranrt\app\Controllers\Warga.php on line 13 and exactly 1 expected
+in APPPATH\Models\WargaModel.php on line 15.
+ 1 APPPATH\Controllers\Warga.php(13): App\Models\WargaModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Warga->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
