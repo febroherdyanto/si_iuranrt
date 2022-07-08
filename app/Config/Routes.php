@@ -43,6 +43,8 @@ $routes->get('/login', 'Page::login');
 $routes->get('/register', 'Page::register');
 
 $routes->get('/warga', 'Warga::index');
+    $routes->add('warga/add', 'Warga::addwarga');
+$routes->post('/warga/save', 'Warga::save');
 
 
 

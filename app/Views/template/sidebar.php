@@ -15,8 +15,8 @@
                           <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Dashboard</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
-                                  <a href="index.html" class="waves-effect waves-dark">
-                                      <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                  <a href="<?= base_url('/dashboard'); ?>" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-home"></i></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>

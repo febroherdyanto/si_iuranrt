@@ -6,7 +6,9 @@ class Page extends BaseController
 {
     public function dashboard()
     {
-        return view('dashboard');
+        $title = "Dashboard";
+        $link = "dashboard";
+        return view('dashboard', compact('title','link'));
     }
 
     // Function Login
