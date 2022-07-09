@@ -45,7 +45,7 @@
                                                     <td><?= $row['status'] ?></td>
                                                     <td>
                                                         <a href="<?= base_url('warga/edit/'.$row['idWarga']); ?>" class="btn btn-sm waves-effect waves-light btn-primary btn-outline-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                                        <a href="<?= base_url('warga/delete/'); ?>" class="btn btn-sm waves-effect waves-light btn-danger btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                                                        <a href="<?= base_url('warga/delete/'.$row['idWarga']); ?>" class="btn btn-sm waves-effect waves-light btn-danger btn-outline-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i> Delete</a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; else: ?>

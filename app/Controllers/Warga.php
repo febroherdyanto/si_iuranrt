@@ -145,4 +145,21 @@ class Warga extends BaseController
         }
     }
 
+
+    //==============================================================
+    //=========================DELETE===============================
+    //==============================================================
+    public function delete($id)
+    {
+        $WargaModel = new WargaModel();
+
+        $warga = $WargaModel->find($id);
+
+        if($warga){
+            $WargaModel->delete($id);
+            echo ('Data berhasil dihapus');
+            return redirect()->to(base_url('/warga'));
+        }
+    }
+
 } //.end of class Page
