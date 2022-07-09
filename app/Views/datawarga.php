@@ -44,7 +44,7 @@
                                                     <td><?= $row['noRumah'] ?></td>
                                                     <td><?= $row['status'] ?></td>
                                                     <td>
-                                                        <a href="<?= base_url('warga/edit/'); ?>" class="btn btn-sm waves-effect waves-light btn-primary btn-outline-primary"><i class="fa fa-pencil"></i> Edit</a>
+                                                        <a href="<?= base_url('warga/edit/'.$row['idWarga']); ?>" class="btn btn-sm waves-effect waves-light btn-primary btn-outline-primary"><i class="fa fa-pencil"></i> Edit</a>
                                                         <a href="<?= base_url('warga/delete/'); ?>" class="btn btn-sm waves-effect waves-light btn-danger btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
                                                     </td>
                                                 </tr>

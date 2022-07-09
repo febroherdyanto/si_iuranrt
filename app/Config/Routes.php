@@ -42,10 +42,13 @@ $routes->get('/dashboard', 'Page::dashboard');
 $routes->get('/login', 'Page::login');
 $routes->get('/register', 'Page::register');
 
+//------------------------------------------
 $routes->get('/warga', 'Warga::index');
-    $routes->add('warga/add', 'Warga::addwarga');
+$routes->add('/warga/add', 'Warga::addwarga');
 $routes->post('/warga/save', 'Warga::save');
-
+//$routes['edit/:id']='warga/edit';
+$routes->get('/warga/edit/(:num)', 'Warga::edit/$1');
+$routes->post('/warga/update/(:num)', 'Warga::update/$1');
 
 
 
