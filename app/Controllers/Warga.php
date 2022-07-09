@@ -81,6 +81,9 @@ class Warga extends BaseController
     public function update($id)
     {
         helper(['form', 'url']);
+        
+        $title = "Edit Data Warga";
+        $link = "warga/edit";
 
         $validation = $this->validate([
             'nik' => [
@@ -152,6 +155,8 @@ class Warga extends BaseController
     public function delete($id)
     {
         $WargaModel = new WargaModel();
+        $title = "Hapus Data Warga";
+        $link = "warga/delete";
 
         $warga = $WargaModel->find($id);
 
