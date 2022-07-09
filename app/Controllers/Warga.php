@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\WargaModel;
+use CodeIgniter\Config\View;
 
 class Warga extends BaseController
 {
@@ -81,7 +82,6 @@ class Warga extends BaseController
     public function update($id)
     {
         helper(['form', 'url']);
-        
         $title = "Edit Data Warga";
         $link = "warga/edit";
 
@@ -127,6 +127,7 @@ class Warga extends BaseController
         if(!$validation){
             $WargaModel = new WargaModel();
 
+            return view('editwarga', compact('title', 'link'));
             return view('editwarga', [
                 'warga' => $WargaModel->find($id),
                 'validation' => $this->validator
