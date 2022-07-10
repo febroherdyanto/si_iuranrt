@@ -6,8 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="." />
-      <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+      <meta name="description" content="Sistem Informasi Pembayaran Iuran RT dengan nama 'Siforate FHika'. Dibuat untuk memenuhi tugas akhir Pemrograman Web Semester 4 - Teknik Informatika - Universitas Pelita Bangsa." />
+      <meta name="keywords" content="sistem, informasi, sistem informasi iuran, iuranrt, febroherdyanto, upb, pelitabangsa" />
       <meta name="author" content="codedthemes" />
       <!-- Favicon icon -->
       <link rel="icon" href="<?= base_url('/assets/images/newlogo.png'); ?>" type="image/x-icon">
