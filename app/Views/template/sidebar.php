@@ -6,7 +6,7 @@
                               <div class="main-menu-header">
                                   <img class="img-80 img-radius" src="<?= base_url('assets/images/avatar-4.jpg');?>" alt="User-Profile-Image">
                                   <div class="user-details">
-                                      <span id="more-details">John Doe</span>
+                                      <span id="more-details">Febro Herdyanto</span>
                                   </div>
                               </div>
                           </div>
@@ -32,7 +32,7 @@
                                   </a>
                               </li>
                               <li class="">
-                                  <a href="index.html" class="waves-effect waves-dark">
+                                  <a href="<?= base_url('warga/add'); ?>" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="fa-solid fa-user-plus"></i></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Tambah Data Warga</span>
                                       <span class="pcoded-mcaret"></span>
@@ -44,14 +44,14 @@
                           <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Iuran Warga</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
-                                  <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                  <a href="<?= base_url('/iuran'); ?>" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Daftar Kas Warga</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
                               <li>
-                                  <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                                  <a href="<?= base_url('/iuran/add'); ?>" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="fa-solid fa-cash-register"></i></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Tambah Iuran</span>
                                       <span class="pcoded-mcaret"></span>
@@ -72,7 +72,7 @@
                               <li>
                                   <a href="map-google.html" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
-                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Data Kas</span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Data Kas (Bln/Thn)</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>        

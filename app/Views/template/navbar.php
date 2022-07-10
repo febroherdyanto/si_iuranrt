@@ -15,7 +15,7 @@
                               </div>
                           </div>
                       </div>
-                      <a href="index.html">
+                      <a href="<?= base_url('/');?>">
                           <img class="img-fluid" src="<?= base_url('assets/images/logogepeng.png');?>" alt="Theme-Logo" />
                       </a>
                       <a class="mobile-options waves-effect waves-light">

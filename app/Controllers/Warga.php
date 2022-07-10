@@ -68,6 +68,7 @@ class Warga extends BaseController
     public function edit($id)
     {
         helper(['form', 'url']);
+
         $title = "Edit Data Warga";
         $link = "warga/edit";
 
@@ -82,8 +83,11 @@ class Warga extends BaseController
     public function update($id)
     {
         helper(['form', 'url']);
+
         $title = "Edit Data Warga";
         $link = "warga/edit";
+        
+        $WargaModel = new WargaModel();
 
         $validation = $this->validate([
             'nik' => [
@@ -127,14 +131,11 @@ class Warga extends BaseController
         if(!$validation){
             $WargaModel = new WargaModel();
 
-            return view('editwarga', compact('title', 'link'));
             return view('editwarga', [
                 'warga' => $WargaModel->find($id),
                 'validation' => $this->validator
             ]);
         }else{
-            $WargaModel = new WargaModel();
-
             $WargaModel->update($id, [
                 'nik' => $this->request->getPost('nik'),
                 'namaWarga' => $this->request->getPost('namaWarga'),

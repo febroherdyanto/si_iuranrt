@@ -34,15 +34,28 @@
                                         <tbody>
                                             <?php
                                             $no = 1;
-                                            if($warga): foreach($warga as $row): ?>
+                                            if($warga): foreach($warga as $row): 
+                                            
+                                                if($row['kelamin'] == 'L'){
+                                                    $kelamin = 'Laki-laki';
+                                                }else{
+                                                    $kelamin = 'Perempuan';
+                                                }
+
+                                                if($row['status'] == '1'){
+                                                    $status = 'Aktif';
+                                                }else{
+                                                    $status = 'Tidak Aktif';
+                                                }
+                                            ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $no++; ?></th>
                                                     <td><?= $row['nik']; ?></td>
                                                     <td><?= $row['namaWarga']; ?></td>
-                                                    <td><?= $row['kelamin']; ?></td>
+                                                    <td><?= $kelamin; ?></td>
                                                     <td><?= $row['alamat'] ?></td>
                                                     <td><?= $row['noRumah'] ?></td>
-                                                    <td><?= $row['status'] ?></td>
+                                                    <td><?= $status ?></td>
                                                     <td>
                                                         <a href="<?= base_url('warga/edit/'.$row['idWarga']); ?>" class="btn btn-sm waves-effect waves-light btn-primary btn-outline-primary"><i class="fa fa-pencil"></i> Edit</a>
                                                         <a href="<?= base_url('warga/delete/'.$row['idWarga']); ?>" class="btn btn-sm waves-effect waves-light btn-danger btn-outline-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i> Delete</a>
