@@ -25,31 +25,53 @@
                                     // =============== You Can Place the Data Here ===============
                                     // ===========================================================
                                 -->
+                                <?php 
+                                foreach($data as $row): 
                                 
-                                <form class="form-material" action="<?= base_url('iuran/save') ?>" method="POST">
-                                    <div class="form-group form-primary">
-                                        <input type="text" name="idWarga" class="typeahead form-control" required="">
+                                    $drafttgl = $row['tanggal'];
+                                    $draftbln = $row['bulan'];
+                                    $thn = $row['tahun'];
+
+                                    if(strlen($draftbln) == 1){
+                                        $bln = '0'.$draftbln;
+                                    }else{
+                                        $bln = $draftbln;
+                                    }
+                        
+                                    if(strlen($drafttgl) == 1){
+                                        $tgl = '0'.$drafttgl;
+                                    }else{
+                                        $tgl = $drafttgl;
+                                    }
+                                    
+                                    $tgll = $thn.'-'.$bln.'-'.$tgl;
+                                ?>
+
+                                <form class="form-material" action="<?= base_url('iuran/update/'.$row['idIuran']) ?>" method="POST">
+                                    <div class="form-group form-info form-static-label">
+                                        <input type="text" name="idWarga" class="typeahead form-control" value="<?= $row['idWarga']; ?>" required="" readonly>
                                         <span class="form-bar"></span>
-                                        <label class="float-label">ID Warga</label>
+                                        <label class="float-label">ID Warga | <i class="fa fa-ban"></i> ID Warga tidak dapat diubah</label>
                                     </div>
                                     <div class="form-group form-primary form-static-label">
-                                        <input type="date" name="tanggal" class="form-control" value="<?= date("Y-m-d"); ?>" required="">
+                                        <input type="date" name="tanggal" class="form-control" value="<?= $tgll; ?>" required="">
                                         <span class="form-bar"></span>
                                         <label class="float-label">Tanggal Transaksi</label>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="text" name="jumlah" class="form-control" id="" required="">
+                                        <input type="text" name="jumlah" class="form-control" required="" value="<?= $row['jumlah']; ?>" id="">
                                         <span class="form-bar"></span>
                                         <label class="float-label">Jumlah Pembayaran</label>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <textarea name="keterangan" class="form-control" required=""></textarea>
+                                        <textarea name="keterangan" class="form-control" required=""><?= $row['keterangan']; ?></textarea>
                                         <span class="form-bar"></span>
                                         <label class="float-label">Keterangan</label>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <button class="btn btn-out waves-effect waves-light btn-primary btn-square" name="save"><i class="fa fa-save"></i> Save</button>
+                                        <button class="btn btn-out waves-effect waves-light btn-primary btn-square" name="save"><i class="fa fa-save"></i> Update</button>
                                 </form>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -72,7 +94,5 @@
         }
     });
 </script>
-
-
 
 <?= $this->include('template/footerforcontent'); ?>

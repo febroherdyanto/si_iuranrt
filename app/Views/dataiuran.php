@@ -37,7 +37,8 @@
                                                 $bulan = $row['bulan'];
                                                 if($bulan == '01'){ $bulan = 'Januari';
                                                 }elseif($bulan == '02'){ $bulan = 'Februari';
-                                                }elseif($bulan == '03'){ $bulan = 'Maret'; $bulan = 'April';
+                                                }elseif($bulan == '03'){ $bulan = 'Maret'; 
+                                                }elseif($bulan == '04'){ $bulan = 'April';
                                                 }elseif($bulan == '05'){ $bulan = 'Mei';
                                                 }elseif($bulan == '06'){ $bulan = 'Juni';
                                                 }elseif($bulan == '07'){ $bulan = 'Juli';
@@ -64,12 +65,8 @@
 
                                                     <td><?php
                                                      $number = $row['jumlah'];
-
-                                                     function convRupiah($value) {
-                                                       return 'Rp ' . number_format($value, 0, ',', '.');
-                                                     } 
                                                      
-                                                     echo convRupiah($number);  ?></td>
+                                                     echo 'Rp ' . number_format($number, 0, ',', '.');  ?></td>
                                                     <td><?= $row['keterangan'] ?></td>
                                                     <td>
                                                         <a href="<?= base_url('iuran/edit/'.$row['idIuran']); ?>" class="btn btn-sm waves-effect waves-light btn-primary btn-outline-primary"><i class="fa fa-pencil"></i> Edit</a>

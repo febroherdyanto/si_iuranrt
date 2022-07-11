@@ -57,6 +57,9 @@ $routes->get("autocomplete", "Iuran::autocomplete", ["as" => "autocomplete"]);
 $routes->get('/iuran', 'Iuran::index');
 $routes->add('/iuran/add', 'Iuran::addiuran');
 $routes->post('/iuran/save', 'Iuran::save');
+$routes->get('/iuran/edit/(:num)', 'Iuran::editiuran/$1');
+$routes->add('/iuran/update/(:num)', 'Iuran::updateiuran/$1');
+$routes->get('/iuran/delete/(:num)', 'Iuran::deleteiuran/$1');
 
 
 

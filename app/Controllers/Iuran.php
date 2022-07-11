@@ -104,8 +104,21 @@ class Iuran extends BaseController
 
         $gabungan = explode('-', $tanggal);
         $thn = $gabungan[0];
-        $bln   = $gabungan[1];
-        $tgl  = $gabungan[2];
+        $draftbln   = $gabungan[1];
+        $drafttgl  = $gabungan[2];
+
+        if(strlen($draftbln) == 1){
+            $bln = '0'.$draftbln;
+        }else{
+            $bln = $draftbln;
+        }
+
+        if(strlen($drafttgl) == 1){
+            $tgl = '0'.$drafttgl;
+        }else{
+            $tgl = $drafttgl;
+        }
+
         
         $data = [
             'idWarga'    => $idWarga,
@@ -124,6 +137,110 @@ class Iuran extends BaseController
             echo ('Data gagal ditambahkan');
             return redirect()->to(base_url('/iuran/add'));
         }
+    }
+
+    //==========================================================
+    //=========================EDIT==============================
+    //==========================================================
+    public function editiuran($idIuran)
+    {
+        helper(['form', 'url']);
+
+        $title = "Edit Iuran Warga";
+        $link = "iuran/edit";
+
+        $model = new IuranModel();
+        $data = array(
+            'iuran' => $model->find($idIuran)
+        );
+        
+        $iuran = $model->find($idIuran);
+        return view('editiuran', compact('title', 'link', 'data'));
+    }
+
+    public function updateiuran($idIuran)
+    {
+        helper(['form', 'url']);
+
+        $title = "Edit Iuran Warga";
+        $link = "iuran/edit";
+
+        $IuranModel = new IuranModel();
+
+        $validation = $this->validate([
+            'idWarga' => [
+                'rules' => 'required', 'readonly' => true,
+                'errors' => [
+                    'required' => 'ID Warga harus diisi'
+                ]
+            ],
+            'tanggal' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tanggal harus diisi'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jumlah harus diisi'
+                ]
+            ],
+            'keterangan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Keterangan harus diisi'
+                ]
+            ]
+        ]);
+        
+        if(!$validation){
+            $IuranModel = new IuranModel();
+
+            return view('editiuran', [
+                'iuran' => $IuranModel->find($idIuran),
+                'validation' => $this->validator
+            ]);
+        }else{
+            $tanggal = $this->request->getPost('tanggal');
+
+            $gabungan = explode('-', $tanggal);
+            $thn = $gabungan[0];
+            $bln   = $gabungan[1];
+            $tgl  = $gabungan[2];
+
+            
+
+            $IuranModel->update($idIuran, [
+                'idWarga' => $this->request->getPost('idWarga'),
+                'tanggal' => $tgl,
+                'bulan' => $bln,
+                'tahun' => $thn,
+                'jumlah' => $this->request->getPost('jumlah'),
+                'keterangan' => $this->request->getPost('keterangan')
+            ]);
+
+            echo ('Data berhasil diubah');
+            return redirect()->to(base_url('/iuran'));
+        }       
+    }
+
+    //==========================================================
+    //=========================DELETE==============================
+    //==========================================================
+    public function deleteiuran($idIuran)
+    {
+        $IuranModel = new IuranModel();
+
+        $title = "Hapus Iuran Warga";
+        $link = "iuran/delete";
+
+        $iuran = $IuranModel->find($idIuran);
+
+        if($iuran){
+            $IuranModel->delete($idIuran);
+            echo ('Data berhasil dihapus');
+            return redirect()->to(base_url('/iuran'));}
     }
 
 }
