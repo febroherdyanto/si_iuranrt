@@ -81,73 +81,37 @@ class Warga extends BaseController
     }
 
     public function update($id)
-    {
+    {   
         helper(['form', 'url']);
 
+        $WargaModel = new WargaModel();
         $title = "Edit Data Warga";
         $link = "warga/edit";
         
-        $WargaModel = new WargaModel();
+            $nik = $this->request->getPost('nik');
+            $namaWarga = $this->request->getPost('namaWarga');
+            $kelamin = $this->request->getPost('kelamin');
+            $alamat = $this->request->getPost('alamat');
+            $noRumah = $this->request->getPost('noRumah');
+            $status = $this->request->getPost('status');
 
-        $validation = $this->validate([
-            'nik' => [
-                'rules' => 'required|min_length[16]|max_length[16]',
-                'errors' => [
-                    'required' => 'NIK tidak boleh kosong'
-                ]
-            ],
-            'namaWarga' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Warga tidak boleh kosong'
-                ]
-            ],
-            'kelamin' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Kelamin tidak boleh kosong'
-                ]
-            ],
-            'alamat' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Alamat tidak boleh kosong'
-                ]
-            ],
-            'noRumah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'No Rumah tidak boleh kosong'
-                ]
-            ],
-            'status' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Status tidak boleh kosong'
-                ]
-            ]
-        ]);
+            $data = [
+                'nik'    => $nik,
+                'namaWarga' => $namaWarga,
+                'kelamin' => $kelamin,
+                'alamat' => $alamat,
+                'noRumah' => $noRumah,
+                'status' => $status
+            ];
 
-        if(!$validation){
-            $WargaModel = new WargaModel();
-
-            return view('editwarga', [
-                'warga' => $WargaModel->find($id),
-                'validation' => $this->validator
-            ]);
-        }else{
-            $WargaModel->update($id, [
-                'nik' => $this->request->getPost('nik'),
-                'namaWarga' => $this->request->getPost('namaWarga'),
-                'kelamin' => $this->request->getPost('kelamin'),
-                'alamat' => $this->request->getPost('alamat'),
-                'noRumah' => $this->request->getPost('noRumah'),
-                'status' => $this->request->getPost('status')
-            ]);
-
-            echo ('Data berhasil diubah');
-            return redirect()->to(base_url('/warga'));
-        }
+            $result = $WargaModel->update($id, $data);
+            if ($result > 0) {
+                echo ('Data berhasil diubah');
+                return redirect()->to(base_url('/warga'));
+            } else {
+                echo ('Data gagal diubah');
+                return redirect()->to(base_url('/warga/edit/' . $id));
+            }
     }
 
 
