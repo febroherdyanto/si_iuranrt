@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 09, 2022 at 02:33 PM
--- Server version: 8.0.27
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 12 Jul 2022 pada 15.52
+-- Versi server: 8.0.27
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,37 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `iuran`
+-- Struktur dari tabel `iuran`
 --
 
 CREATE TABLE `iuran` (
   `idIuran` int NOT NULL,
   `idWarga` int NOT NULL,
   `keterangan` tinytext COLLATE utf8mb4_general_ci NOT NULL,
-  `tanggal` date NOT NULL,
+  `tanggal` int NOT NULL,
   `bulan` int NOT NULL,
   `tahun` year NOT NULL,
-  `jumlah` decimal(10,2) NOT NULL
+  `jumlah` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `iuran`
+--
+
+INSERT INTO `iuran` (`idIuran`, `idWarga`, `keterangan`, `tanggal`, `bulan`, `tahun`, `jumlah`) VALUES
+(1, 1, 'Bayar Bulan Februari', 2, 1, 2022, '120000'),
+(2, 1, 'Bayaarr April', 7, 4, 2022, '200000'),
+(4, 14, 'sdfsd', 12, 7, 2022, '300100');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int NOT NULL,
-  `user_name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `user_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `user_password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `user_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `warga`
+-- Struktur dari tabel `warga`
 --
 
 CREATE TABLE `warga` (
@@ -68,65 +63,68 @@ CREATE TABLE `warga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `warga`
+-- Dumping data untuk tabel `warga`
 --
 
 INSERT INTO `warga` (`idWarga`, `nik`, `namaWarga`, `kelamin`, `alamat`, `noRumah`, `status`) VALUES
-(1, '3519112002980001', 'Febro Update Baru', 'L', 'Jl. Sulawesi Krajan', '011', 1),
-(5, '123456799', 'Farhan', 'L', 'kjas,dlaknaslk,jd', '112', 1);
+(1, '3519112002980001', 'Febro Herdyanto', 'L', 'Jl. Sulawesi Krajan', '011', 1),
+(5, '123456799', 'Farhan A', 'L', 'kjas,dlaknaslk,jd', '112', 1),
+(8, '092192019', 'Aldidsf', 'L', 'dsadada', '111', 1),
+(9, '99131201001', 'Yanuar', 'L', 'Jl. Sulawesi', '001', 1),
+(10, '99131201002', 'Bobby', 'L', 'Jl. Kamboja', '002', 1),
+(11, '99131201003', 'Rega', 'L', 'Jl. Sulawesi', '003', 1),
+(12, '99131201004', 'Eddi', 'L', 'Jl. Sulawesi', '004', 1),
+(13, '99131201005', 'Enggar', 'P', 'Jl. Kamboja', '005', 1),
+(14, '99131201006', 'Yovira', 'P', 'Jl. Sulawesi', '006', 1),
+(15, '99131201007', 'Iswati', 'P', 'Jl. Sulawesi', '007', 1),
+(16, '99131201008', 'Setiawan', 'L', 'Jl. Kamboja', '008', 1),
+(17, '99131201009', 'Fitri', 'P', 'Jl. Sulawesi', '012', 1),
+(18, '99131201010', 'Irianti', 'P', 'Jl. Kamboja', '014', 1),
+(19, '99131201011', 'Herdyanto', 'L', 'Jl. Kamboja', '009', 1),
+(20, '99131201012', 'Sri', 'P', 'Jl. Sulawesi', '022', 1),
+(21, '99131201013', 'Radja', 'L', 'Jl. Kamboja', '018', 1),
+(22, '99131201014', 'Sabila', 'P', 'Jl. Sulawesi', '032', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `iuran`
+-- Indeks untuk tabel `iuran`
 --
 ALTER TABLE `iuran`
   ADD PRIMARY KEY (`idIuran`),
   ADD KEY `idWarga` (`idWarga`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `warga`
+-- Indeks untuk tabel `warga`
 --
 ALTER TABLE `warga`
   ADD PRIMARY KEY (`idWarga`),
   ADD UNIQUE KEY `nik` (`nik`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `iuran`
+-- AUTO_INCREMENT untuk tabel `iuran`
 --
 ALTER TABLE `iuran`
-  MODIFY `idIuran` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idIuran` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `warga`
+-- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `idWarga` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idWarga` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `iuran`
+-- Ketidakleluasaan untuk tabel `iuran`
 --
 ALTER TABLE `iuran`
   ADD CONSTRAINT `iuran_ibfk_1` FOREIGN KEY (`idWarga`) REFERENCES `warga` (`idWarga`) ON DELETE CASCADE ON UPDATE CASCADE;
