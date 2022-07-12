@@ -8,7 +8,7 @@
 
 | Description | Hyperlink|
 |---|---|
-|Website | https://siforate.portofolio.febroherdyanto.id/public/ |
+| Demo Website | https://siforate.portofolio.febroherdyanto.id/public/ |
 | Github | https://github.com/febroherdyanto/si_iuranrt |
 
 
@@ -111,3 +111,14 @@ public $baseURL = 'http://localhost:8080/'; #Disesuaikan dengan URL Server
     ];
 ```
 
+
+
+## License
+
+[GNU General Public License v3.0](LICENSE)
+
+```
+Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> Everyone is permitted to copy and distribute verbatim copies  of this license document, but changing it is not allowed.
+```
+
+# THANK YOU !
