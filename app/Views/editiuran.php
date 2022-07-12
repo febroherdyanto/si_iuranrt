@@ -53,6 +53,16 @@
                                         <span class="form-bar"></span>
                                         <label class="float-label">ID Warga | <i class="fa fa-ban"></i> ID Warga tidak dapat diubah</label>
                                     </div>
+                                    <div class="form-group form-info form-static-label">
+                                        <?php $db      = \Config\Database::connect();
+                                            $query = $db->query('select namaWarga from warga where idWarga = '.$row['idWarga']);
+                                            foreach ($query->getResultArray() as $row2) { ?>
+                                            <input type="text" name="namaWarga" class="typeahead form-control" value="<?= $row2['namaWarga']; ?>" required="" readonly>
+                                        <?php } ?>
+                                        
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Nama Warga | <i class="fa fa-ban"></i> Tidak dapat diubah</label>
+                                    </div>
                                     <div class="form-group form-primary form-static-label">
                                         <input type="date" name="tanggal" class="form-control" value="<?= $tgll; ?>" required="">
                                         <span class="form-bar"></span>

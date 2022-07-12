@@ -61,6 +61,8 @@ $routes->get('/iuran/edit/(:num)', 'Iuran::editiuran/$1');
 $routes->add('/iuran/update/(:num)', 'Iuran::updateiuran/$1');
 $routes->get('/iuran/delete/(:num)', 'Iuran::deleteiuran/$1');
 
+//----------------LAPORAN--------------------------
+$routes->get('/laporan', 'Laporan::index');
 
 
 /*
