@@ -28,9 +28,9 @@
                                 
                                 <form class="form-material" action="<?= base_url('iuran/save') ?>" method="POST">
                                     <div class="form-group form-primary">
-                                        <input type="text" name="idWarga" class="typeahead form-control" required="">
+                                        <input type="text" name="nik" class="typeahead form-control" required="">
                                         <span class="form-bar"></span>
-                                        <label class="float-label">ID Warga</label>
+                                        <label class="float-label">Nomor Induk Kependudukan (NIK)</label>
                                     </div>
                                     <div class="form-group form-primary form-static-label">
                                         <input type="date" name="tanggal" class="form-control" value="<?= date("Y-m-d"); ?>" required="">

@@ -62,7 +62,14 @@ $routes->add('/iuran/update/(:num)', 'Iuran::updateiuran/$1');
 $routes->get('/iuran/delete/(:num)', 'Iuran::deleteiuran/$1');
 
 //----------------LAPORAN--------------------------
-$routes->get('/laporan', 'Laporan::index');
+$routes->get('/unpaid', 'Laporan::unpaid');
+$routes->add('/unpaid/checks', 'Laporan::checks');
+
+//----------------LAPORAN--------------------------
+$routes->get('/kas', 'Page::kas');
+$routes->get('/about-siforate', 'Page::aboutsiforate');
+$routes->get('/about-dev', 'Page::aboutdev');
+$routes->get('/thank-you', 'Page::thanks');
 
 
 /*
