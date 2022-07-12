@@ -10,6 +10,7 @@
 |---|---|
 | Demo Website | https://siforate.portofolio.febroherdyanto.id/public/ |
 | Github | https://github.com/febroherdyanto/si_iuranrt |
+| User Guide | https://siforate.portofolio.febroherdyanto.id/public/User-Guide.pdf |
 
 
 ## Apa itu Siforate FHika?
