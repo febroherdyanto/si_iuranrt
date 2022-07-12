@@ -36,7 +36,7 @@ class Iuran extends BaseController
 		$builder = $this->db->table("warga");
 
 		$builder->select('*');
-		$builder->like('nik', $query, 'both');
+		$builder->like('idWarga', $query, 'both');
         $builder->orLike('namaWarga', $query, 'both');
 		$query = $builder->get();
 		$data = $query->getResult();
@@ -47,7 +47,7 @@ class Iuran extends BaseController
 		if (count($data) > 0) {
 
 			foreach ($data as $country) {
-				$namaWargacek[0] = $country->nik;
+				$namaWargacek[0] = $country->idWarga;
 				$namaWargacek[1] = $country->namaWarga;
 			}
 		}
@@ -59,7 +59,7 @@ class Iuran extends BaseController
         $builder = $db->table('warga');
 
         $builder->select('*');
-        $builder->where('nik', $this->request->getVar('nik'));
+        $builder->where('idWarga', $this->request->getVar('idWarga'));
         $builder->limit(10);
         $query = $builder->get();
         $datanama = $query->getResult();
@@ -99,7 +99,7 @@ class Iuran extends BaseController
 
     public function save()
     {
-        $nik = $this->request->getPost('nik');
+        $idWarga = $this->request->getPost('idWarga');
         $tanggal = $this->request->getPost('tanggal');
         $jumlah = $this->request->getPost('jumlah');
         $keterangan = $this->request->getPost('keterangan');
@@ -123,7 +123,7 @@ class Iuran extends BaseController
 
         
         $data = [
-            'nik'    => $nik,
+            'idWarga'    => $idWarga,
             'tanggal' => $tgl,
             'bulan' => $bln,
             'tahun' => $thn,

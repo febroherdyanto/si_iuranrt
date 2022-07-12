@@ -1021,3 +1021,31 @@ in APPPATH\Views\template\header.php on line 7.
 16 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
 17 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
 18 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-12 10:18:13 --> Unknown column 'nik' in 'field list'
+CRITICAL - 2022-07-12 10:18:13 --> Unknown column 'nik' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH\Models\IuranModel.php(19): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\Iuran.php(134): App\Models\IuranModel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Iuran->save()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-12 10:19:26 --> Column 'idWarga' cannot be null
+CRITICAL - 2022-07-12 10:19:26 --> Column 'idWarga' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH\Models\IuranModel.php(19): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\Iuran.php(134): App\Models\IuranModel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Iuran->save()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

@@ -22,6 +22,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID Warga</th>
                                                 <th>NIK</th>
                                                 <th>Nama Warga</th>
                                                 <th>Jenis Kelamin</th>
@@ -50,6 +51,7 @@
                                             ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $no++; ?></th>
+                                                    <td class="text-center"><?= $row['idWarga']; ?></td>
                                                     <td><?= $row['nik']; ?></td>
                                                     <td><?= $row['namaWarga']; ?></td>
                                                     <td><?= $kelamin; ?></td>
